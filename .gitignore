@@ -250,6 +250,7 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 ServiceFabricBackup/
 *.rptproj.bak
+.package-lock
 
 # SQL Server files
 *.mdf
