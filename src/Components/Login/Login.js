@@ -3,6 +3,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
 
+//lib
+import ReactDOM from 'react-dom';
+import GoogleLogin from 'react-google-login';
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,6 +17,10 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+  }
+
+  const responseGoogle = (response) => {
+    console.log(response);
   }
 
   return (
@@ -57,6 +65,16 @@ export default function Login() {
         </Form.Group>
 
       </Form>
+
+    
+<GoogleLogin
+
+  clientId="12345678-gbgin9h7q69rpjehq1cd2441b4nosnid.apps.googleusercontent.com"
+  onSuccess={responseGoogle}
+  onFailure={responseGoogle}
+  cookiePolicy={'single_host_origin'}
+  isSignedIn={true}
+/>
     </div>
   );
 }
